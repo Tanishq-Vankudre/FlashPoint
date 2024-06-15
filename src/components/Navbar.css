@@ -1,0 +1,33 @@
+/* Navbar.css */
+.navbar-brand img {
+    margin-right: 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #00aaff;
+  }
+  
+  .form-control {
+    width: 200px;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #00aaff;
+  }
+  
+  .btn-outline-success {
+    color: #00aaff;
+    border-color: #00aaff;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #00aaff;
+    color: #fff;
+    border-color: #00aaff;
+  }
+  
