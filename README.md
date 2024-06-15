@@ -1,8 +1,47 @@
-# React + Vite
+FlashPoint - React News App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FlashPoint is a simple React application that allows users to read the latest news articles. Users can choose news categories such as Technology, Business, Health, Sports, and Entertainment.
 
-Currently, two official plugins are available:
+Features 🌟
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Choose news categories: Technology, Business, Health, Sports, Entertainment.
+* View the latest news articles with images.
+* Read more about each news article.
+
+Technologies Used 🚀
+
+* React
+* News API
+* Bootstrap
+
+How to Use 🤔
+1.Clone the repository:
+
+git clone https://github.com/sankettpatil/FlashPoint
+cd FlashPoint
+ Install dependencies:
+
+ npm install
+ Run the application:
+
+ npm run dev
+ Start exploring the latest news!
+
+API Key Setup 🔑
+
+- To use this app, you need to obtain a News API key. Update the API key in the NewsBoard.js file:
+- NewsBoard.js
+- let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=YOUR_NEWS_API_KEY`;
+
+Contributing 🤝
+Contributions are welcome! Feel free to enhance the design, add new features, or fix any issues. Open a pull request to contribute.
+
+License 📜
+This project is licensed under the MIT License.
+
+Author ✨
+* Sanket Patil
+* Tanishq Vankudre
+
+
+Enjoy exploring the world of news with News_App!
