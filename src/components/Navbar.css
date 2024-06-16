@@ -1,33 +1,97 @@
 /* Navbar.css */
+.navbar {
+  width: 200px; 
+  height: 100vh; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 1000;
+  background-color: #343a40; 
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
 .navbar-brand img {
-    margin-right: 10px;
-  }
-  
-  .navbar-nav .nav-link {
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #00aaff;
-  }
-  
-  .form-control {
-    width: 200px;
-  }
-  
-  .form-control:focus {
-    box-shadow: none;
-    border-color: #00aaff;
-  }
-  
-  .btn-outline-success {
-    color: #00aaff;
-    border-color: #00aaff;
-  }
-  
-  .btn-outline-success:hover {
-    background-color: #00aaff;
-    color: #fff;
-    border-color: #00aaff;
-  }
-  
+  margin-right: 10px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-link {
+  width: 100%;
+  padding: 10px 0; 
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00aaff;
+}
+
+.categories-container {
+  flex: 1; 
+  margin-top: 20px; 
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 10px; 
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #00aaff;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+.icon-link {
+  padding: 10px; 
+  color: white; 
+}
+
+.icon-link:hover {
+  color: #adb5bd; 
+}
+
+.search-container {
+  width: 100%; 
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column; 
+  width: 100%; 
+}
+
+.search-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  width: 100%;
+}
+
+.search-icon {
+  margin-left: 5px; 
+}
+
+.sign-in-container {
+  width: 100%;
+}
