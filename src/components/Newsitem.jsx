@@ -1,17 +1,21 @@
-import React from 'react'
-import image from '/Users/sanketpatil/news-mag/assets/news.jpg'
+import React from 'react';
+import image from '/Users/sanketpatil/news-mag/assets/news.jpg'; 
 
-const NewsItem = ({title,description,src,url}) => {
+const Newsitem = ({ title, description, src, url }) => {
+  if (!src) {
+    return null; 
+  }
+
   return (
-    <div className="card bg-dark text-light mb-3 d-inline-block my-3 mx-3 px-2 py-2" style={{maxWidth:"370px"}}>
-      <img src={src?src:image} style={{height:"200px",width:"350px"}} className="card-img-top"></img>
+    <div className="card bg-dark text-light mb-3">
+      <img src={src} onError={(e) => e.target.src = image} className="card-img-top" alt="news" style={{ height: "200px", objectFit: "cover" }} />
       <div className="card-body">
-        <h5 className="card-title">{title.slice(0,50)}</h5>
-        <p className="card-text">{description?description.slice(0,90):"Nothing but random text put here by sanket and tanishq as this news failed to fetch the description."}</p>
+        <h5 className="card-title">{title.slice(0, 50)}</h5>
+        <p className="card-text">{description ? description.slice(0, 90) : "No description available."}</p>
         <a href={url} className="btn btn-primary">Read More</a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsItem
+export default Newsitem;
