@@ -2,19 +2,40 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 const Navbar = ({ setCategory, setSearchTerm }) => {
   const [searchTerm, setLocalSearchTerm] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]); // In-memory user store
 
   const handleSearchChange = (event) => {
     setLocalSearchTerm(event.target.value);
   };
 
   const handleSearchSubmit = (event) => {
-    event.preventDefault(); 
-    setSearchTerm(searchTerm); 
-    setShowSearch(false); 
+    event.preventDefault();
+    setSearchTerm(searchTerm);
+    setShowSearch(false);
+  };
+
+  const handleSignUp = (newUser) => {
+    setUsers([...users, newUser]);
+    setShowSignUp(false);
+  };
+
+  const handleSignIn = ({ username, password }, setError) => {
+    const foundUser = users.find((user) => user.username === username && user.password === password);
+    if (foundUser) {
+      setUser(username);
+      setShowSignIn(false);
+    } else {
+      setError("Invalid username or password");
+    }
   };
 
   return (
@@ -71,12 +92,23 @@ const Navbar = ({ setCategory, setSearchTerm }) => {
         </div>
         <ul className="navbar-nav justify-content-end sign-in-container">
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              <FontAwesomeIcon icon={faUser} /> Sign In
-            </a>
+            {user ? (
+              <span className="navbar-text">Welcome, {user}</span>
+            ) : (
+              <>
+                <a className="nav-link" href="#" onClick={() => setShowSignIn(true)}>
+                  <FontAwesomeIcon icon={faUser} /> Sign In
+                </a>
+                <a className="nav-link" href="#" onClick={() => setShowSignUp(true)}>
+                  <FontAwesomeIcon icon={faUser} /> Sign Up
+                </a>
+              </>
+            )}
           </li>
         </ul>
       </div>
+      {showSignIn && <SignIn onSignIn={handleSignIn} />}
+      {showSignUp && <SignUp onSignUp={handleSignUp} />}
     </nav>
   );
 };
