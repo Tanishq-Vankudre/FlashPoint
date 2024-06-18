@@ -1,5 +1,6 @@
 import React from 'react';
-import image from '/Users/sanketpatil/news-mag/assets/news.jpg'; 
+import image from '/Users/sanketpatil/news-mag/assets/news.jpg';
+import './Newsitem.css'; 
 
 const Newsitem = ({ title, description, src, url }) => {
   if (!src) {
@@ -7,12 +8,12 @@ const Newsitem = ({ title, description, src, url }) => {
   }
 
   return (
-    <div className="card bg-dark text-light mb-3">
-      <img src={src} onError={(e) => e.target.src = image} className="card-img-top" alt="news" style={{ height: "200px", objectFit: "cover" }} />
-      <div className="card-body">
-        <h5 className="card-title">{title.slice(0, 50)}</h5>
-        <p className="card-text">{description ? description.slice(0, 90) : "No description available."}</p>
-        <a href={url} className="btn btn-primary">Read More</a>
+    <div className="news-item">
+      <img src={src} onError={(e) => e.target.src = image} className="news-item-img" alt="news" />
+      <div className="news-item-content">
+        <h3 className="news-item-title">{title.slice(0, 50)}</h3>
+        <p className="news-item-description">{description ? description.slice(0, 90) : "No description available."}</p>
+        <a href={url} className="news-item-link" target="_blank" rel="noopener noreferrer">Read More</a>
       </div>
     </div>
   );
