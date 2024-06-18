@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Newsitem from "./Newsitem";
-import './NewsBoard.css'; // Import the CSS file
+import './NewsBoard.css';
 
 const NewsBoard = ({ category, searchQuery }) => {
   const [articles, setArticles] = useState([]);
@@ -20,7 +20,9 @@ const NewsBoard = ({ category, searchQuery }) => {
 
   return (
     <div className="newsboard-container">
-      <h2 className="text-center">Latest <span className="badge bg-danger">News</span></h2>
+      <h2 className="text-center">
+        Latest <span className="badge bg-danger">News</span>
+      </h2>
       <div className="news-cards-container">
         {articles.map((news, index) => (
           <Newsitem key={index} title={news.title} description={news.description} src={news.urlToImage} url={news.url} />
