@@ -1,15 +1,15 @@
 /* Navbar.css */
 .navbar {
-  width: 200px; 
-  height: 100vh; 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   flex-direction: column;
   align-items: flex-start;
   padding: 20px;
   z-index: 1000;
-  background-color: #343a40; 
+  background-color: #343a40;
 }
 
 .navbar-container {
@@ -21,6 +21,19 @@
 
 .navbar-brand img {
   margin-right: 10px;
+}
+
+.menu-toggle {
+  display: none; /* Hide menu toggle by default */
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 4px;
 }
 
 .navbar-nav {
@@ -35,7 +48,7 @@
 
 .nav-link {
   width: 100%;
-  padding: 10px 0; 
+  padding: 10px 0;
   transition: color 0.3s ease;
 }
 
@@ -44,13 +57,13 @@
 }
 
 .categories-container {
-  flex: 1; 
-  margin-top: 20px; 
+  flex: 1;
+  margin-top: 20px;
 }
 
 .form-control {
   width: 100%;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .form-control:focus {
@@ -63,35 +76,120 @@
 }
 
 .icon-link {
-  padding: 10px; 
-  color: white; 
+  padding: 10px;
+  color: white;
 }
 
 .icon-link:hover {
-  color: #adb5bd; 
+  color: #adb5bd;
 }
 
 .search-container {
-  width: 100%; 
+  width: 100%;
 }
 
 .search-form {
   display: flex;
-  flex-direction: column; 
-  width: 100%; 
+  flex-direction: column;
+  width: 100%;
 }
 
 .search-toggle {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
 }
 
 .search-icon {
-  margin-left: 5px; 
+  margin-left: 5px;
 }
 
 .sign-in-container {
+  height: 100%;
   width: 100%;
+}
+
+/* Media query for phones */
+@media (max-width: 767px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    background-color: #343a40; /* Ensure background color is maintained */
+  }
+
+  .navbar-container {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    margin-right: auto; /* Ensure the brand is aligned to the left */
+  }
+
+  .navbar-nav {
+    display: none; /* Hide nav links by default */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .menu-toggle {
+    display: block; /* Display menu toggle for mobile */
+  }
+
+  .nav-item {
+    width: auto;
+  }
+
+  .nav-link {
+    padding: 5px 10px; /* Adjust padding for mobile */
+  }
+
+  .categories-container {
+    display: none;
+  }
+
+  .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-form {
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+  }
+
+  .form-control {
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 10px; /* Ensure spacing between input and button */
+  }
+
+  .btn-primary {
+    width: auto;
+  }
+
+  .sign-in-container {
+    flex-grow: 0;
+    margin-left: auto;
+  }
+
+  /* Additional Styles for Mobile */
+  .navbar-brand img {
+    width: 25px; /* Adjust logo size */
+    height: auto;
+  }
+
+  .search-toggle {
+    padding: 5px 10px; /* Adjust padding */
+  }
 }
