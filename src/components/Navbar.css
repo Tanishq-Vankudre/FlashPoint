@@ -24,7 +24,7 @@
 }
 
 .menu-toggle {
-  display: none; /* Hide menu toggle by default */
+  display: none; 
   cursor: pointer;
 }
 
@@ -119,7 +119,7 @@
     flex-direction: row;
     align-items: center;
     padding: 10px;
-    background-color: #343a40; /* Ensure background color is maintained */
+    background-color: #343a40; 
   }
 
   .navbar-container {
@@ -129,11 +129,10 @@
   }
 
   .navbar-brand {
-    margin-right: auto; /* Ensure the brand is aligned to the left */
-  }
+    margin-right: auto;
 
   .navbar-nav {
-    display: none; /* Hide nav links by default */
+    display: none; 
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -141,7 +140,7 @@
   }
 
   .menu-toggle {
-    display: block; /* Display menu toggle for mobile */
+    display: block; 
   }
 
   .nav-item {
@@ -149,7 +148,7 @@
   }
 
   .nav-link {
-    padding: 5px 10px; /* Adjust padding for mobile */
+    padding: 5px 10px; 
   }
 
   .categories-container {
@@ -171,7 +170,7 @@
   .form-control {
     width: auto;
     margin-bottom: 0;
-    margin-right: 10px; /* Ensure spacing between input and button */
+    margin-right: 10px; 
   }
 
   .btn-primary {
@@ -185,11 +184,11 @@
 
   /* Additional Styles for Mobile */
   .navbar-brand img {
-    width: 25px; /* Adjust logo size */
+    width: 25px; 
     height: auto;
   }
 
   .search-toggle {
-    padding: 5px 10px; /* Adjust padding */
+    padding: 5px 10px;
   }
 }
