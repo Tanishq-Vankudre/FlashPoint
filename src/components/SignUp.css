@@ -1,0 +1,16 @@
+.sign-up-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: absolute;
+    top: 60px; 
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
