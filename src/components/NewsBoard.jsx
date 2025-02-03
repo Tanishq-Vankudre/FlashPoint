@@ -13,7 +13,7 @@ const NewsBoard = ({ category, searchQuery }) => {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const filteredArticles = data.articles.filter(article => article.urlToImage); // Filter out articles without images
+        const filteredArticles = data.articles.filter(article => article.urlToImage); 
         setArticles(filteredArticles);
       });
   }, [category, searchQuery]);
