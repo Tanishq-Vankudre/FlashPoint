@@ -1,0 +1,33 @@
+/* src/App.css */
+body, .app-container {
+    background-color: #212529;
+    color: #dee2e6;
+  }
+  
+  
+  .content {
+    padding: 20px; 
+  }
+  
+  .form-control {
+    background-color: #343a40; 
+    color: #dee2e6;
+    border-color: #495057; 
+  }
+  
+  .form-control:focus {
+    background-color: #495057;
+    color: #dee2e6;
+    border-color: #495057; 
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3; 
+  }
+  
