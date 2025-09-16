@@ -13,7 +13,7 @@ FlashPoint is a lightweight news reader built with React and Vite. Browse the la
 
 > Note: This app uses the public NewsAPI.org service and requires an API key.
 
-## Features
+## Features 🌟
 
 - Category filters: Technology, Business, Health, Sports, Entertainment
 - Keyword search: Toggle a search bar and query across articles
@@ -21,18 +21,18 @@ FlashPoint is a lightweight news reader built with React and Vite. Browse the la
 - Responsive UI: Built with Bootstrap 5
 - Simple auth modals: In‑memory Sign In/Sign Up for demo purposes (no backend)
 
-## Tech Stack
+## Tech Stack 🛠️
 
 - React 18 + Vite 5
 - Bootstrap 5 (via CDN)
 - Font Awesome React for icons
 - NewsAPI.org for data
 
-## Prerequisites
+## Prerequisites 
 
 - Node.js 18+ (required by Vite 5)
 
-## Getting Started
+## How to Use 🤔
 
 1) Clone the repository
 
@@ -63,14 +63,14 @@ npm run dev
 
 Then open the local URL printed in the terminal.
 
-## Available Scripts
+## Available Scripts 📄
 
 - `npm run dev` — Start Vite dev server
 - `npm run build` — Production build
 - `npm run preview` — Preview the production build locally
 - `npm run lint` — Run ESLint
 
-## How It Works
+## How It Works 🤔
 
 - Headlines endpoint: When you select a category, the app calls `https://newsapi.org/v2/top-headlines?country=us&category=<category>&apiKey=<key>`
 - Search endpoint: When you submit a search, the app calls `https://newsapi.org/v2/everything?q=<query>&apiKey=<key>`
@@ -78,7 +78,7 @@ Then open the local URL printed in the terminal.
 - Articles without an image are filtered out; broken images fall back to a local placeholder
 - Sign In/Sign Up are purely client‑side and stored in memory for demo only
 
-## Project Structure
+## Project Structure 📁
 
 ```
 FlashPoint/
@@ -92,39 +92,40 @@ FlashPoint/
 │  │  ├─ SignIn.jsx         # In‑memory sign in modal
 │  │  └─ SignUp.jsx         # In‑memory sign up modal
 │  └─ styles (*.css)        # Component styles
-├─ assets/                  # Icons, images
+├─ public/
+│  ├─ assets/                  # Icons, images
 ├─ index.html               # Bootstrap 5 via CDN
 ├─ vite.config.js
 └─ package.json
 ```
 
-## Configuration Notes
+## Configuration Notes 📄
 
 - Put your NewsAPI key in `.env` as `VITE_API_KEY`. Do not commit your real key.
 - The current UI uses Bootstrap via CDN. If you prefer package-managed CSS, add `bootstrap` to dependencies and import its CSS in `main.jsx`.
 - Auth modals are for UI only; there is no persistence or server.
 
-## Troubleshooting
+## Troubleshooting 🛠️
 
 - 401 Unauthorized from NewsAPI: Verify `VITE_API_KEY` is set in `.env` and you restarted the dev server.
 - Empty results: Categories are US‑centric by default (`country=us`). Try Search mode for broader results.
 - Mixed content/CORS issues on custom deployments: Serve over HTTPS and ensure your host allows outbound requests to NewsAPI.
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! Please open an issue to discuss major changes, and submit a PR with a clear description.
 
 
-## License
+## License 📜
 
-MIT License — see `LICENSE` for details.
+This project is licensed under the MIT License.
 
-## Authors
+## Authors ✨
 
 - Sanket Patil — https://github.com/sankettpatil
 - Tanishq Vankudre — https://github.com/Tanishq-Vankudre
 
-## Future Scope
+## Future Scope 🚀
 
 - Persisted auth (Firebase/Auth0) with profiles and settings
 - Save/favorite articles and local history

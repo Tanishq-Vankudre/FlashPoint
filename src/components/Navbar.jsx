@@ -69,7 +69,7 @@ const Navbar = ({ setCategory, setSearchTerm }) => {
       <div className="navbar-container">
         <div className="navbar-header">
           <a className="navbar-brand" href="#">
-            <img src="../../assets/Flash.png" alt="FlashPoint" width="30" height="24" className="d-inline-block align-text-top" />
+            <img src="/assets/Flash.png" alt="FlashPoint" width="30" height="24" className="d-inline-block align-text-top" />
             Flash Point
           </a>
           <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
