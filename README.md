@@ -5,7 +5,7 @@
 ![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-563d7c?logo=bootstrap)
 ![Font Awesome](https://img.shields.io/badge/Font%20Awesome-React-blueviolet?logo=fontawesome)
-![GNews API](https://img.shields.io/badge/API-NewsAPI-red?logo=news)
+![GNews API](https://img.shields.io/badge/API-GNewsAPI-red?logo=news)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange)
 
@@ -37,7 +37,7 @@ FlashPoint is a lightweight news reader built with React and Vite. Browse the la
 1) Clone the repository
 
 ```cmd
-git clone <your-repo-url>
+git clone https://github.com/sankettpatil/FlashPoint.git
 cd FlashPoint
 ```
 
@@ -49,7 +49,7 @@ npm install
 
 3) Configure environment variables
 
-Create a `.env` file at the project root and set your NewsAPI key:
+Create a `.env` file at the project root and set your GNewsAPI key:
 
 ```
 VITE_API_KEY=your_gnews_api_key_here
@@ -101,15 +101,15 @@ FlashPoint/
 
 ## Configuration Notes 📄
 
-- Put your NewsAPI key in `.env` as `VITE_API_KEY`. Do not commit your real key.
+- Put your GNewsAPI key in `.env` as `VITE_API_KEY`. Do not commit your real key.
 - The current UI uses Bootstrap via CDN. If you prefer package-managed CSS, add `bootstrap` to dependencies and import its CSS in `main.jsx`.
 - Auth modals are for UI only; there is no persistence or server.
 
 ## Troubleshooting 🛠️
 
-- 401 Unauthorized from NewsAPI: Verify `VITE_API_KEY` is set in `.env` and you restarted the dev server.
+- 401 Unauthorized from GNewsAPI: Verify `VITE_API_KEY` is set in `.env` and you restarted the dev server.
 - Empty results: Categories are US‑centric by default (`country=us`). Try Search mode for broader results.
-- Mixed content/CORS issues on custom deployments: Serve over HTTPS and ensure your host allows outbound requests to NewsAPI.
+- Mixed content/CORS issues on custom deployments: Serve over HTTPS and ensure your host allows outbound requests to GNewsAPI.
 
 ## Contributing 🤝
 
