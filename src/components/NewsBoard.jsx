@@ -6,14 +6,16 @@ const NewsBoard = ({ category, searchQuery }) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
+    let url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&max=10&apikey=${import.meta.env.VITE_API_KEY}`;
     if (searchQuery) {
-      url = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${import.meta.env.VITE_API_KEY}`;
+      url = `https://gnews.io/api/v4/search?q=${searchQuery}&lang=en&max=10&apikey=${import.meta.env.VITE_API_KEY}`;
     }
+
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const filteredArticles = data.articles.filter(article => article.urlToImage); 
+        // GNews → data.articles with "image"
+        const filteredArticles = data.articles.filter(article => article.image);
         setArticles(filteredArticles);
       });
   }, [category, searchQuery]);
@@ -25,7 +27,13 @@ const NewsBoard = ({ category, searchQuery }) => {
       </h2>
       <div className="news-cards-container">
         {articles.map((news, index) => (
-          <Newsitem key={index} title={news.title} description={news.description} src={news.urlToImage} url={news.url} />
+          <Newsitem 
+            key={index} 
+            title={news.title} 
+            description={news.description} 
+            src={news.image} 
+            url={news.url} 
+          />
         ))}
       </div>
     </div>

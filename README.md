@@ -5,13 +5,13 @@
 ![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-563d7c?logo=bootstrap)
 ![Font Awesome](https://img.shields.io/badge/Font%20Awesome-React-blueviolet?logo=fontawesome)
-![News API](https://img.shields.io/badge/API-NewsAPI-red?logo=news)
+![GNews API](https://img.shields.io/badge/API-NewsAPI-red?logo=news)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange)
 
 FlashPoint is a lightweight news reader built with React and Vite. Browse the latest headlines by category, search across articles, and enjoy a clean, responsive UI.
 
-> Note: This app uses the public NewsAPI.org service and requires an API key.
+> Note: This app uses the free GNews API service and requires an API key.
 
 ## Features 🌟
 
@@ -26,7 +26,7 @@ FlashPoint is a lightweight news reader built with React and Vite. Browse the la
 - React 18 + Vite 5
 - Bootstrap 5 (via CDN)
 - Font Awesome React for icons
-- NewsAPI.org for data
+- GNews API for data
 
 ## Prerequisites 
 
@@ -52,7 +52,7 @@ npm install
 Create a `.env` file at the project root and set your NewsAPI key:
 
 ```
-VITE_API_KEY=your_newsapi_key_here
+VITE_API_KEY=your_gnews_api_key_here
 ```
 
 4) Start the dev server
@@ -72,8 +72,8 @@ Then open the local URL printed in the terminal.
 
 ## How It Works 🤔
 
-- Headlines endpoint: When you select a category, the app calls `https://newsapi.org/v2/top-headlines?country=us&category=<category>&apiKey=<key>`
-- Search endpoint: When you submit a search, the app calls `https://newsapi.org/v2/everything?q=<query>&apiKey=<key>`
+- Headlines endpoint: When you select a category, the app calls `https://gnews.io/api/v4/top-headlines?category=<category>&lang=en&country=us&max=10&apikey=<key>`
+- Search endpoint: When you submit a search, the app calls `https://gnews.io/api/v4/search?q=<query>&lang=en&country=us&max=10&apikey=<key>`
 - API key is read from `import.meta.env.VITE_API_KEY` (set in `.env`)
 - Articles without an image are filtered out; broken images fall back to a local placeholder
 - Sign In/Sign Up are purely client‑side and stored in memory for demo only
@@ -122,8 +122,8 @@ This project is licensed under the MIT License.
 
 ## Authors ✨
 
-- Sanket Patil — https://github.com/sankettpatil
-- Tanishq Vankudre — https://github.com/Tanishq-Vankudre
+- Sanket Patil —[GitHub](https://github.com/sankettpatil)
+- Tanishq Vankudre —[GitHub](https://github.com/Tanishq-Vankudre)
 
 ## Future Scope 🚀
 
