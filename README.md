@@ -1,58 +1,139 @@
-# FlashPoint - React News App
 
-FlashPoint is a simple and intuitive React application designed to keep you up-to-date with the latest news articles. Users can explore various news categories, including Technology, Business, Health, Sports, and Entertainment.
+# FlashPoint — React News App
+
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-563d7c?logo=bootstrap)
+![Font Awesome](https://img.shields.io/badge/Font%20Awesome-React-blueviolet?logo=fontawesome)
+![GNews API](https://img.shields.io/badge/API-NewsAPI-red?logo=news)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange)
+
+FlashPoint is a lightweight news reader built with React and Vite. Browse the latest headlines by category, search across articles, and enjoy a clean, responsive UI.
+
+> Note: This app uses the free GNews API service and requires an API key.
 
 ## Features 🌟
 
-- **Category Selection**: Choose from Technology, Business, Health, Sports, and Entertainment.
-- **Latest News**: View the most recent news articles with accompanying images.
-- **Detailed Articles**: Read in-depth details about each news article.
+- Category filters: Technology, Business, Health, Sports, Entertainment
+- Keyword search: Toggle a search bar and query across articles
+- Image fallback: Broken images automatically fall back to a default
+- Responsive UI: Built with Bootstrap 5
+- Simple auth modals: In‑memory Sign In/Sign Up for demo purposes (no backend)
 
-## Technologies Used 🚀
+## Tech Stack 🛠️
 
-- **React**: For building the user interface.
-- **News API**: For fetching the latest news articles.
-- **Bootstrap**: For responsive and sleek design.
+- React 18 + Vite 5
+- Bootstrap 5 (via CDN)
+- Font Awesome React for icons
+- GNews API for data
+
+## Prerequisites 
+
+- Node.js 18+ (required by Vite 5)
 
 ## How to Use 🤔
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/sankettpatil/FlashPoint
-   cd FlashPoint
-   ```
+1) Clone the repository
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Run the application**:
-   ```bash
-   npm run dev
-   ```
-   Start exploring the latest news!
-
-## API Key Setup 🔑
-
-To use this app, you need to obtain a News API key. Update the API key in the `NewsBoard.js` file:
-
-```javascript
-// NewsBoard.js
-let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=YOUR_NEWS_API_KEY`;
+```cmd
+git clone <your-repo-url>
+cd FlashPoint
 ```
+
+2) Install dependencies
+
+```cmd
+npm install
+```
+
+3) Configure environment variables
+
+Create a `.env` file at the project root and set your NewsAPI key:
+
+```
+VITE_API_KEY=your_gnews_api_key_here
+```
+
+4) Start the dev server
+
+```cmd
+npm run dev
+```
+
+Then open the local URL printed in the terminal.
+
+## Available Scripts 📄
+
+- `npm run dev` — Start Vite dev server
+- `npm run build` — Production build
+- `npm run preview` — Preview the production build locally
+- `npm run lint` — Run ESLint
+
+## How It Works 🤔
+
+- Headlines endpoint: When you select a category, the app calls `https://gnews.io/api/v4/top-headlines?category=<category>&lang=en&country=us&max=10&apikey=<key>`
+- Search endpoint: When you submit a search, the app calls `https://gnews.io/api/v4/search?q=<query>&lang=en&country=us&max=10&apikey=<key>`
+- API key is read from `import.meta.env.VITE_API_KEY` (set in `.env`)
+- Articles without an image are filtered out; broken images fall back to a local placeholder
+- Sign In/Sign Up are purely client‑side and stored in memory for demo only
+
+## Project Structure 📁
+
+```
+FlashPoint/
+├─ src/
+│  ├─ App.jsx               # App shell: navbar + news board
+│  ├─ main.jsx              # React bootstrap
+│  ├─ components/
+│  │  ├─ Navbar.jsx         # Category filters, search, auth modals
+│  │  ├─ NewsBoard.jsx      # Fetch and list news articles
+│  │  ├─ Newsitem.jsx       # Individual article card with image fallback
+│  │  ├─ SignIn.jsx         # In‑memory sign in modal
+│  │  └─ SignUp.jsx         # In‑memory sign up modal
+│  └─ styles (*.css)        # Component styles
+├─ public/
+│  ├─ assets/                  # Icons, images
+├─ index.html               # Bootstrap 5 via CDN
+├─ vite.config.js
+└─ package.json
+```
+
+## Configuration Notes 📄
+
+- Put your NewsAPI key in `.env` as `VITE_API_KEY`. Do not commit your real key.
+- The current UI uses Bootstrap via CDN. If you prefer package-managed CSS, add `bootstrap` to dependencies and import its CSS in `main.jsx`.
+- Auth modals are for UI only; there is no persistence or server.
+
+## Troubleshooting 🛠️
+
+- 401 Unauthorized from NewsAPI: Verify `VITE_API_KEY` is set in `.env` and you restarted the dev server.
+- Empty results: Categories are US‑centric by default (`country=us`). Try Search mode for broader results.
+- Mixed content/CORS issues on custom deployments: Serve over HTTPS and ensure your host allows outbound requests to NewsAPI.
 
 ## Contributing 🤝
 
-We welcome contributions! Whether it's enhancing the design, adding new features, or fixing bugs, feel free to open a pull request and contribute to the project.
+Contributions are welcome! Please open an issue to discuss major changes, and submit a PR with a clear description.
+
 
 ## License 📜
 
 This project is licensed under the MIT License.
 
-## Author ✨
+## Authors ✨
 
-- **Sanket Patil**
-- **Tanishq Vankudre**
+- Sanket Patil —[GitHub](https://github.com/sankettpatil)
+- Tanishq Vankudre —[GitHub](https://github.com/Tanishq-Vankudre)
+
+## Future Scope 🚀
+
+- Persisted auth (Firebase/Auth0) with profiles and settings
+- Save/favorite articles and local history
+- Pagination or infinite scroll with skeleton loaders
+- Dark mode and accessibility passes (ARIA, color contrast)
+- Multi‑country and language selector; time‑zone aware timestamps
+- Caching and offline support with a service worker
+- Unit tests (React Testing Library) and CI workflow
+- Deploy guides for Vercel/Netlify/GitHub Pages with environment variables
 
 Enjoy exploring the world of news with FlashPoint!
